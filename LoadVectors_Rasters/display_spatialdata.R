@@ -19,4 +19,4 @@ head (michigan)
   summary (michigan)
   
 #Create a histogram of the data in the household field
-hist(michigan$HOUSEHOLDS, col ="lightblue")
+hist(michigan$HOUSEHOLDS, col ="red")
