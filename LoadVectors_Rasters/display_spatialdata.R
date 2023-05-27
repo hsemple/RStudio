@@ -29,7 +29,7 @@ hist(michigan$HOUSEHOLDS, col ="red")
 writeOGR(michigan, "C:/Michigan_Counties", "Michigan2", driver="ESRI Shapefile", overwrite_layer=TRUE)
 
   
-  
+#QUICK PLOTS  
 # Create a Choropleth Map Using the quick thematic map function from TMAP Library
 qtm(michigan, fill = "HOUSEHOLDS", fill.title="HOUSEHOLDS")
 
@@ -42,4 +42,13 @@ tm_borders ( col = " black " , lwd = 1)
 data("World")
 tm_shape(World) + tm_polygons("HPI", n=4, style ="equal") +
   tm_layout( frame = TRUE , scale = 1.2)
+
+
+#Plot a US Map Showing Contiguous States using the Albers_Equal_Area_Conic_
+
+tm_shape(contiguous_states, projection = 5070) +
+  tm_polygons("wages", id = "Name")
+
+#https://map-rfun.library.duke.edu/031_thematic_mapping.html
+
 
